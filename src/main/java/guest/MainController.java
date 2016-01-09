@@ -4,14 +4,20 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class GuestController {
+public class MainController {
 
     @Autowired
     private GuestDao guestDao;
+
+    @Autowired
+    private TaskDao taskDao;
 
     private int userId;
 
@@ -28,12 +34,12 @@ public class GuestController {
         Guest guest = guestDao.findByNameAndPassword(name, password);
         if (guest != null) {
             userId = guest.id;
-            return new ModelAndView("redirect:guest.html");
+            return new ModelAndView("redirect:list.html");
         } else {
             return new ModelAndView("redirect:main.html");
         }
 
-        // Prepare the result view (guest.jsp):
+        // Prepare the result view (list.jsp):
 
     }
 
@@ -44,15 +50,26 @@ public class GuestController {
         String password = request.getParameter("password");
         guestDao.persist(new Guest(name, password));
 
-        // Prepare the result view (guest.jsp):
+        // Prepare the result view (list.jsp):
         return new ModelAndView("redirect:main.html");
     }
 
-    @RequestMapping(value = "/guest")
-    public ModelAndView guestbook() {
+    @RequestMapping(value = "/list")
+    public ModelAndView list() {
         Guest guest = guestDao.findById(userId);
-        // Prepare the result view (guest.jsp):
-//        return new ModelAndView("guest.jsp", "guestDao", guestDao);
-        return new ModelAndView("guest.jsp", "guest", guest);
+        Task task = new Task(guest.getId(), "HelloWorld!");
+        taskDao.persist(task);
+        ModelAndView model = new ModelAndView("list.jsp");
+        model.addObject("guest", guest);
+        model.addObject("taskDao", taskDao);
+        return model;
+    }
+
+    @RequestMapping(value = "/addTask")
+    public ModelAndView addTask(HttpServletRequest request) {
+        String text = request.getParameter("text");
+        Task task = new Task(userId, text);
+        taskDao.persist(task);
+        return new ModelAndView("redirect:list.html");
     }
 }

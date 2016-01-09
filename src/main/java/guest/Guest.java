@@ -21,10 +21,38 @@ public class Guest implements Serializable {
     public Guest() {
     }
  
-    public Guest(String name, String surname) {
+    public Guest(String name, String password) {
         this.name = name;
-        this.password = surname;
+        this.password = password;
         this.signingDate = new Date(System.currentTimeMillis());
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Date getDate() {
+        return signingDate;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setDate(Date date) {
+        this.signingDate = date;
     }
  
     // String Representation:
