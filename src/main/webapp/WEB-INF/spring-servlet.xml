@@ -20,6 +20,11 @@
  
   <!-- Use @Component annotations for bean definitions -->
   <context:component-scan base-package="guest"/>
+
+    <!-- Map returned view name "rssViewer" to bean id "rssViewer" -->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+
+    <bean id="rssViewer" class="guest.RssViewer" />
  
   <!-- Use @Controller annotations for MVC controller definitions -->
   <mvc:annotation-driven />

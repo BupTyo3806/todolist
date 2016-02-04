@@ -1,0 +1,87 @@
+body {
+    text-transform: uppercase;
+    font-family: 'PT Sans', serif;
+    font-style: italic;
+    margin: 0;
+	padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    min-height: 1250px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    background: url(images/reg_logo.png) 70px 70px no-repeat,
+                url(images/Wood.png);
+}
+
+.container div {
+    margin-left: 270px;
+    font-size: 25px;
+}
+
+input[type="text"], input[type="password"] {
+    display: inline-block;
+    width: 450px;
+    border: none;
+    background: none;
+    color: #000;
+    font-size: 20px;
+    transform: skewX(-20deg);
+    border-radius: 5px 5px;
+}
+
+.name {
+    display: inline-block;
+    width: 606px;
+    padding-bottom: 50px;
+    margin-top: 530px;
+    background: url(images/-.png);
+    background-repeat: no-repeat;
+    background-position: 0 30px;
+}
+
+.login {
+    display: inline-block;
+    width: 606px;
+    padding-bottom: 50px;
+    background: url(images/_.png);
+    background-repeat: no-repeat;
+    background-position: 0 30px;
+}
+
+.password {
+    display: inline-block;
+    width: 606px;
+    padding-bottom: 50px;
+    background: url(images/_.png);
+    background-repeat: no-repeat;
+    background-position: 0 30px;
+}
+
+label {
+    margin-right: 20px;
+}
+
+input[type=submit] {
+    display: block;
+    width: 380px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    margin-left: 360px;
+    font-size: 25px;
+    font-family: 'PT Sans', serif;
+    font-style: italic;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    background: url(images/_-3.png);
+    background-repeat: no-repeat;
+    background-position: 0px 30px;
+}

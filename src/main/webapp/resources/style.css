@@ -1,0 +1,157 @@
+body {
+    text-transform: uppercase;
+    font-family: 'PT Sans', serif;
+    font-style: italic;
+    margin: 0;
+	padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    min-height: 1250px;
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    background: url(images/List-2.png) -50px 70px,
+                url(images/Wood.png) repeat-y;
+    background-repeat: repeat-y;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.menu a {
+    padding-left: 42px;
+    font-size: 20px;
+    display: block;
+    margin-left: 42px;
+}
+
+a.logo {
+    margin-top: 250px;
+    margin-left: -15px;
+}
+
+a.menu_all_tasks {
+    margin-top: 25px;
+    background: url(images/Task-All.png);
+    background-repeat: no-repeat;
+    background-position: 0px -1px;
+}
+
+a.menu_important_tasks {
+    margin-top: 37px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background: url(images/!-3.png);
+    background-repeat: no-repeat;
+    background-position: 0px -1px;
+}
+
+a.menu_done_tasks {
+    margin-top: 30px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    background: url(images/Done.png);
+    background-repeat: no-repeat;
+    background-position: -1px -1px ;
+}
+
+a.menu_notdone_tasks {
+    margin-top: 37px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background: url(images/MergedLayers.png);
+    background-repeat: no-repeat;
+    background-position: -1px -1px ;
+}
+
+.tasks {
+    margin-top: 385px;
+    margin-left: 90px;
+    font-size: 20px;
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+    word-wrap: break-word;
+    padding: 5px;
+    padding-left: 60px;
+}
+
+.text {
+    display: block;
+    width: 340px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    font-size: 10px;
+    color: rgba(0,0,0,0.5);
+}
+
+.notdone_task {
+    background: url(images/!.png);
+    background-repeat: no-repeat;
+    background-position: 0 3px;
+}
+
+.done_task {
+    background: url(images/!-2.png);
+    background-repeat: no-repeat;
+    background-position: 0 3px;
+}
+
+.important_task {
+    background: url(images/!-3.png);
+    background-repeat: no-repeat;
+    background-position: 0 3px;
+}
+
+input[type=text]{
+    display: inline-block;
+    width: 400px;
+    margin-left: 40px;
+    transform: skewX(-20deg);
+    border: white solid 4px;
+    border-radius: 5px 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);  
+}
+
+input[type=submit]{
+    display: inline-block;
+    border: none;
+    padding: 10px 10px;
+    background: url(images/+.png);
+    background-repeat: no-repeat;
+    background-position: -5px 10px;
+}
+
+.action_panel {
+    margin-top: 40px;
+    display: none;
+}
+
+.action_panel a{
+    padding: 0;
+    font-style: italic;
+    border: 2px dotted #000;
+    font-size: 16px;
+    margin-top: 20px;
+}
